@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awesome Books</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="index.js"></script>
+  <script defer src="index.js"></script>
 </head>
 <body>
   <main>
     <header><h1>Awesome Books</h1></header>
-    <section class="display"></section>
+    <section class="display" data-display></section>
     <section class="input">
-      <article><input type="text" placeholder="Title" class="input-field"></article>
-      <article><input type="text" placeholder="Author" class="input-field"></article>
+      <article><input type="text" placeholder="Title" class="input-field" data-title></article>
+      <article><input type="text" placeholder="Author" class="input-field" data-author></article>
       <article><button type="button">Add</button></article>
     </section>
   </main>
