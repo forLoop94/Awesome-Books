@@ -4,7 +4,6 @@ const author = document.querySelector('[data-author]');
 const displaySection = document.querySelector('[data-display]');
 const inputFields = document.querySelectorAll('.input-field');
 
-
 const bookCollection = [];
 
 const addBook = () => {
@@ -18,25 +17,24 @@ const addBook = () => {
   removeBtns.forEach((button) => {
     button.addEventListener('click', () => {
       button.parentNode.remove();
-    })
-  })
-}
+    });
+  });
+};
 
 addBtn.addEventListener('click', () => {
   addBook();
-})
+});
 
 inputFields.forEach((field) => {
   field.addEventListener('change', () => {
     const bookData = {
       title: title.value,
-      author: author.value
+      author: author.value,
     };
     const stringifyBookData = JSON.stringify(bookData);
-    console.log(stringifyBookData);
     localStorage.setItem('bookData', stringifyBookData);
-  })
-})
+  });
+});
 
 const storedBookData = JSON.parse(localStorage.getItem('bookData'));
 
