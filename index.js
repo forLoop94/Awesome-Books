@@ -41,7 +41,7 @@ const display = () => {
       removeBook(i);
       display();
     });
-    const divider = document.createElement('hr')
+    const divider = document.createElement('hr');
     book.appendChild(removeBtn);
     book.appendChild(divider);
     displaySection.appendChild(book);
