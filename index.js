@@ -4,43 +4,41 @@ const author = document.querySelector('[data-author]');
 const displaySection = document.querySelector('[data-display]');
 const inputFields = document.querySelectorAll('.input-field');
 
-const bookCollection = [];
+let bookCollection = [];
 
-const addBook = () => {
-  const book = document.createElement('article');
-  book.className = 'displayed-book';
-  book.innerHTML = `<div>${title.value}</div><div>${author.value}</div><button class='remove'>Remove</button><hr>`;
+const books = localStorage.getItem('books')
+const allBooks = JSON.parse(books);
+if (books) {
+  bookCollection = allBooks
+}
 
-  displaySection.appendChild(book);
-  bookCollection.push(book);
-  const removeBtns = document.querySelectorAll('.remove');
-  removeBtns.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.parentNode.remove();
-    });
-  });
+const addBook = (title, author) => {
+  console.log(bookCollection)
+  // const book = document.createElement('article');
+  // book.className = 'displayed-book';
+  // book.innerHTML = `<div>${title.value}</div><div>${author.value}</div><button class='remove'>Remove</button><hr>`;
+  function book(title, author) {
+    this.title = title
+    this.author = author
+  };
+
+  const newBook = new book(title, author)
+
+  // displaySection.appendChild(book);
+  bookCollection.push(newBook);
+  localStorage.setItem('books', JSON.stringify(bookCollection))
+  // console.log(bookCollection);
+  // const removeBtns = document.querySelectorAll('.remove');
+  // removeBtns.forEach((button) => {
+  //   button.addEventListener('click', () => {
+  //     button.parentNode.remove();
+  //   });
+  // });
 };
 
 addBtn.addEventListener('click', () => {
-  addBook();
-});
-
-inputFields.forEach((field) => {
-  field.addEventListener('change', () => {
-    const bookData = {
-      title: title.value,
-      author: author.value,
-    };
-    const stringifyBookData = JSON.stringify(bookData);
-    localStorage.setItem('bookData', stringifyBookData);
-  });
-});
-
-const storedBookData = JSON.parse(localStorage.getItem('bookData'));
-
-window.addEventListener('load', () => {
-  if (storedBookData) {
-    title.value = storedBookData.title;
-    author.value = storedBookData.author;
-  }
+  const bookTitle = title.value;
+  console.log(bookTitle);
+  const bookAuthor = author.value;
+  addBook(bookTitle, bookAuthor);
 });
