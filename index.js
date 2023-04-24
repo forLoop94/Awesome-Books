@@ -9,7 +9,7 @@ let bookCollection = [];
 const books = localStorage.getItem('books')
 const allBooks = JSON.parse(books);
 if (books) {
-  bookCollection = allBooks
+  bookCollection = allBooks;
 }
 
 const addBook = (title, author) => {
@@ -41,4 +41,19 @@ addBtn.addEventListener('click', () => {
   console.log(bookTitle);
   const bookAuthor = author.value;
   addBook(bookTitle, bookAuthor);
+  display();
+  title.value = '';
+  author.value = '';
 });
+
+const display = () => {
+  displaySection.innerHTML = "";
+  for (let i = 0; i < bookCollection.length; i++) {
+    const book = document.createElement('article');
+    book.className = 'displayed-book';
+    const bookDetails = bookCollection[i];
+    book.innerHTML = `<div>${bookDetails.title}</div><div>${bookDetails.author}</div><button class='remove'>Remove</button><hr>`;
+    displaySection.appendChild(book);
+  }
+}
+display();
