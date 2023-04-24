@@ -105,6 +105,12 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/_AndrewsCharles)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/andrewscharles94)
 
+👤 **Mesak Lalrindika**
+
+- GitHub: [@githubhandle](https://github.com/MesakDuduCoder)
+- Twitter: [@twitterhandle](https://twitter.com/Mesak22812376)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mesak-lalrindika-77480b22b/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
