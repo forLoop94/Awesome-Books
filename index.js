@@ -19,7 +19,12 @@ const addBook = (title, author) => {
 
   const newBook = new Book(title, author);
 
-  bookCollection.push(newBook);
+  bookCollection = bookCollection.concat(newBook);
+  localStorage.setItem('books', JSON.stringify(bookCollection));
+};
+
+const removeBook = (i) => {
+  bookCollection.splice(i, 1);
   localStorage.setItem('books', JSON.stringify(bookCollection));
 };
 
@@ -29,7 +34,16 @@ const display = () => {
     const book = document.createElement('article');
     book.className = 'displayed-book';
     const bookDetails = bookCollection[i];
-    book.innerHTML = `<div>${bookDetails.title}</div><div>${bookDetails.author}</div><button onClick={removeBook(${i})} class='remove'>Remove</button><hr>`;
+    book.innerHTML = `<div>${bookDetails.title}</div><div>${bookDetails.author}</div>`;
+    const removeBtn = document.createElement('button');
+    removeBtn.innerHTML = 'remove';
+    removeBtn.addEventListener('click', () => {
+      removeBook(i);
+      display();
+    });
+    const divider = document.createElement('hr')
+    book.appendChild(removeBtn);
+    book.appendChild(divider);
     displaySection.appendChild(book);
   }
 };
@@ -43,10 +57,4 @@ addBtn.addEventListener('click', () => {
   author.value = '';
 });
 
-const removeBook = (i) => {
-  bookCollection.splice(i, 1);
-  localStorage.setItem('books', JSON.stringify(bookCollection));
-  display();
-};
 display();
-removeBook();
