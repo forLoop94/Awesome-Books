@@ -78,3 +78,49 @@ button {
   font-size: 17px;
   align-self: flex-end;
 }
+
+/* Header */
+
+.header-items {
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    border: 2px solid black;
+}
+
+header p {
+  margin: 0;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+nav a:not(:first-child):not(:last-child) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.date {
+  float: right;
+  margin-right: 3rem;
+    font-size: 18px;
+      font-weight: 700;
+}
