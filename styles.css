@@ -1,3 +1,80 @@
 .input-field {
   margin-bottom: 10px;
 }
+
+h1 {
+  text-align: center;
+}
+
+.display {
+  border: 2px solid black;
+}
+
+.displayed-book {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(200, 200, 200, 0.6);
+  padding: 0.5rem;
+}
+
+.displayed-book div,
+button {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.light-background {
+  background-color: rgb(255, 255, 255);
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  margin-top: 1.5rem;
+}
+
+.divider div {
+  width: 20%;
+  background-color: black;
+  height: 0.1rem;
+}
+
+.remove,
+.input button {
+  box-shadow: 3px 3px 5px black;
+  border-radius: 0;
+  border: 2px solid black;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input input {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 0.4rem;
+  width: 40%;
+  font-size: 18px;
+}
+
+.input .btn {
+  width: 40%;
+}
+
+.input button {
+  padding: 0.5rem;
+  font-size: 17px;
+  align-self: flex-end;
+}
