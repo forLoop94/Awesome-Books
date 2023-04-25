@@ -181,3 +181,7 @@ footer p {
  align-items: center;
  justify-content: center;
 }
+
+.no-display {
+  display: none;
+}

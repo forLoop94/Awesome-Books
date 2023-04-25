@@ -2,6 +2,14 @@ const displaySection = document.querySelector('[data-display]');
 const addBtn = document.querySelector('button');
 const title = document.querySelector('[data-title]');
 const author = document.querySelector('[data-author]');
+const list = document.querySelector('[data-list]');
+const add = document.querySelector('[data-add]');
+const contact = document.querySelector('[data-contact]');
+
+const bookList = document.querySelector('[data-book-list]');
+const addBook = document.querySelector('[data-add-book]');
+const contactInfo = document.querySelector('[data-contact-info]');
+
 
 class NewBook {
   constructor(title, author) {
@@ -56,9 +64,7 @@ const display = () => {
       newBooks.removeBook(i);
       display();
     });
-    // const divider = document.createElement("hr");
     book.appendChild(removeBtn);
-    // book.appendChild(divider);
     displaySection.appendChild(book);
   }
 };
@@ -75,3 +81,15 @@ addBtn.addEventListener('click', () => {
   title.value = '';
   author.value = '';
 });
+
+list.addEventListener('click', () => {
+  
+})
+
+add.addEventListener('click', () => {
+  
+})
+
+contact.addEventListener('click', () => {
+  
+})
