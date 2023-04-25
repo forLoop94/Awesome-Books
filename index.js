@@ -1,60 +1,73 @@
-const addBtn = document.querySelector('button');
-const title = document.querySelector('[data-title]');
-const author = document.querySelector('[data-author]');
-const displaySection = document.querySelector('[data-display]');
+const displaySection = document.querySelector("[data-display]");
+const addBtn = document.querySelector("button");
+const title = document.querySelector("[data-title]");
+const author = document.querySelector("[data-author]");
 
-let bookCollection = [];
-
-const books = localStorage.getItem('books');
-const allBooks = JSON.parse(books);
-if (books) {
-  bookCollection = allBooks;
-}
-
-const addBook = (title, author) => {
-  function Book(title, author) {
+class NewBook {
+  constructor(title, author) {
     this.title = title;
     this.author = author;
   }
+}
 
-  const newBook = new Book(title, author);
+class Book {
+  constructor() {
+    this.bookCollection = [];
+    this.getBooksFromLocalStorage();
+  }
 
-  bookCollection = bookCollection.concat(newBook);
-  localStorage.setItem('books', JSON.stringify(bookCollection));
-};
+  addBook(title, author) {
+    const newBook = new NewBook(title, author);
+    this.bookCollection = this.bookCollection.concat(newBook);
+    localStorage.setItem("books", JSON.stringify(this.bookCollection));
+  }
 
-const removeBook = (i) => {
-  bookCollection.splice(i, 1);
-  localStorage.setItem('books', JSON.stringify(bookCollection));
-};
+  removeBook(i) {
+    this.bookCollection.splice(i, 1);
+    localStorage.setItem("books", JSON.stringify(this.bookCollection));
+  }
+
+  getBooksFromLocalStorage() {
+    const books = localStorage.getItem("books");
+    const allBooks = JSON.parse(books);
+    if (books) {
+      this.bookCollection = allBooks;
+    }
+  }
+}
+
+const newBooks = new Book();
 
 const display = () => {
-  displaySection.innerHTML = '';
+  let bookCollection = newBooks.bookCollection;
+  displaySection.innerHTML = "";
   for (let i = 0; i < bookCollection.length; i += 1) {
-    const book = document.createElement('article');
-    book.className = 'displayed-book';
+    const book = document.createElement("article");
+    book.className = "displayed-book";
     const bookDetails = bookCollection[i];
     book.innerHTML = `<div>${bookDetails.title}</div><div>${bookDetails.author}</div>`;
-    const removeBtn = document.createElement('button');
-    removeBtn.innerHTML = 'remove';
-    removeBtn.addEventListener('click', () => {
-      removeBook(i);
+    const removeBtn = document.createElement("button");
+    removeBtn.innerHTML = "remove";
+    removeBtn.addEventListener("click", () => {
+      newBooks.removeBook(i);
       display();
     });
-    const divider = document.createElement('hr');
+    const divider = document.createElement("hr");
     book.appendChild(removeBtn);
     book.appendChild(divider);
     displaySection.appendChild(book);
   }
 };
 
-addBtn.addEventListener('click', () => {
+display();
+
+addBtn.addEventListener("click", () => {
   const bookTitle = title.value;
   const bookAuthor = author.value;
-  addBook(bookTitle, bookAuthor);
+  if (bookTitle !== "" && bookAuthor !== "") {
+    newBooks.addBook(bookTitle, bookAuthor);
+  }
   display();
-  title.value = '';
-  author.value = '';
+  title.value = "";
+  author.value = "";
 });
-
-display();
