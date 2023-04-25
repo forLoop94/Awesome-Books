@@ -1,13 +1,20 @@
 .input-field {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 .display {
   border: 2px solid black;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 .displayed-book {
@@ -52,6 +59,7 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 80%;
 }
 
 .input article {
@@ -77,4 +85,108 @@ button {
   padding: 0.5rem;
   font-size: 17px;
   align-self: flex-end;
+}
+
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-items {
+  width: 96%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  border: 2px solid black;
+}
+
+header p {
+  margin: 0;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+nav a:not(:first-child):not(:last-child) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.date {
+  align-self: flex-end;
+  margin-right: 3rem;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Contact */
+#add-book {
+  display: none;
+}
+
+#book-list {
+  display: flex;
+}
+
+#contact-info {
+  display: none;
+}
+
+footer p {
+  margin: 0;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact p,
+.contact ul li {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Footer */
+
+footer {
+  padding: 10px 20px;
+  display: flex;
+  border: 2px solid black;
+}
+
+/* containers */
+.nav-pages {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.no-display {
+  display: none;
 }

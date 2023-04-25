@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,57 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="index.js"></script>
 </head>
+
 <body>
+  <header>
+ 
+      <div class="header-items">
+        <p>Awesome Books</p>
+        <nav>
+          <a class="list" href="#" data-list>List</a>
+          <a class="add" href="#" data-add>Add new</a>
+          <a class="contact" href="#" data-contact>Contact</a>
+        </nav>
+      </div>
+      <div class="date">date</div>
+ 
+  </header>
+
   <main>
-    <header><h1>Awesome Books</h1></header>
-    <section class="display" data-display></section>
-    <div class="divider"><div></div></div>
-    <section class="input">
-      <h2>Add a new book</h2>
-      <article><input type="text" placeholder="Title" class="input-field" data-title></article>
-      <article><input type="text" placeholder="Author" class="input-field" data-author></article>
-      <article class="btn"><button type="button">Add</button></article>
+    <section id="book-list"  class="nav-pages" data-book-list>
+      <header>
+        <h1>Awesome Books</h1>
+      </header>
+      <section class="display" data-display></section>
     </section>
+
+    <section id="add-book" class="nav-pages" data-add-book>
+      <section class="input">
+        <h2>Add a new book</h2>
+        <article><input type="text" placeholder="Title" class="input-field" data-title></article>
+        <article><input type="text" placeholder="Author" class="input-field" data-author></article>
+        <article class="btn"><button type="button">Add</button></article>
+      </section>
+    </section>
+
+    <section id="contact-info" class="nav-pages" data-contact-info>
+      <div class="contact">
+        <h2>Contact information</h2>
+        <p>Do have any questions or you just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </div>
+    </section>
+
+
   </main>
+  <footer>
+    <p>Copyright ...</p>
+  </footer>
 </body>
+
 </html>
