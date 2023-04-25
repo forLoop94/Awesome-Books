@@ -83,13 +83,19 @@ addBtn.addEventListener('click', () => {
 });
 
 list.addEventListener('click', () => {
-  
+  bookList.style.display = 'flex';
+  contactInfo.style.display = 'none';
+  addBook.style.display = 'none';
 })
 
 add.addEventListener('click', () => {
-  
+  bookList.style.display = 'none';
+  contactInfo.style.display = 'none';
+  addBook.style.display = 'flex';
 })
 
 contact.addEventListener('click', () => {
-  
+  bookList.style.display = 'none';
+  contactInfo.style.display = 'flex';
+  addBook.style.display = 'none';
 })
