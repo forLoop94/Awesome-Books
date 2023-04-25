@@ -95,11 +95,11 @@ header {
 
 .header-items {
   width: 96%;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    border: 2px solid black;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  border: 2px solid black;
 }
 
 header p {
@@ -140,15 +140,22 @@ nav a:not(:first-child):not(:last-child) {
 
 /* Contact */
 #add-book {
- display: none;
+  display: none;
 }
+
 #book-list {
   display: flex;
-  
 }
 
 #contact-info {
   display: none;
+}
+
+footer p {
+  margin: 0;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .contact p,
@@ -166,20 +173,14 @@ footer {
   border: 2px solid black;
 }
 
-footer p {
-  margin: 0;
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-}
-
 /* containers */
 .nav-pages {
- height: 70vh;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .flex {
